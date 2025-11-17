@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "228510698510",
+    "project_id": "fir-exampleapp-eb444",
+    "storage_bucket": "fir-exampleapp-eb444.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228510698510:android:77ad804e07fba3371b405f",
+        "android_client_info": {
+          "package_name": "com.nayeem.firebase_app_example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8usuwf6npLfAOFtjAekpBM28sNJLPXp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
