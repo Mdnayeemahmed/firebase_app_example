@@ -37,6 +37,7 @@ class AuthController extends GetxController {
       "phone": phone,
       "role": role,
       "email": user.email,
+      "subscription": "false",
       "created_at": FieldValue.serverTimestamp(),
     }, SetOptions(merge: true));
   }
