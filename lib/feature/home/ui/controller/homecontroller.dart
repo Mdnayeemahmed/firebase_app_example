@@ -19,7 +19,7 @@ class HomeController extends GetxController {
   // ------------------------------------------------------------------
   // Reactive variables
   // ------------------------------------------------------------------
-  final RxList<Building> buildings = <Building>[].obs;
+  final RxList<BuildingModel> buildings = <BuildingModel>[].obs;
   final RxBool isLoading = false.obs;
 
   Future<void> loadUserData() async {
@@ -43,7 +43,7 @@ class HomeController extends GetxController {
           .snapshots()
           .listen((snapshot) {
         buildings.value = snapshot.docs
-            .map((doc) => Building.fromFirestore(doc))
+            .map((doc) => BuildingModel.fromFirestore(doc))
             .toList();
       });
     } catch (e) {
@@ -61,6 +61,7 @@ class HomeController extends GetxController {
   }) async {
     try {
       String buildingId = _firestore.collection("buildings").doc().id;
+      String uuid = _auth.currentUser!.uid.toString();
 
       print(buildingId.toString());
 
@@ -70,6 +71,7 @@ class HomeController extends GetxController {
         "note": note,
         "uid": buildingId,
         "created_at": FieldValue.serverTimestamp(),
+        "owner_uid":uuid
       };
 
       await _firestore.collection("buildings").doc(buildingId).set(data);

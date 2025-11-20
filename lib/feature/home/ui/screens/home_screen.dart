@@ -23,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
     controller = Get.put(HomeController());
 
     controller.loadUserData();
-    // controller.fetchBuildings(); // <--- IMPORTANT
+    controller.fetchBuildings();
   }
 
   // ------------------------------------------------------------
@@ -48,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
   // ------------------------------------------------------------
   // OPEN UPDATE FORM
   // ------------------------------------------------------------
-  void _openUpdateBuilding(Building b) {
+  void _openUpdateBuilding(BuildingModel b) {
     Get.bottomSheet(
       BuildingFormSheet(
         isEdit: true,

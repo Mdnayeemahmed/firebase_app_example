@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Building {
+class BuildingModel {
   final String id;
   final BuildingInformation buildingInformation;
   final BuildingLocation buildingLocation;
@@ -8,7 +8,7 @@ class Building {
   final String uid;
   final Timestamp? createdAt;
 
-  Building({
+  BuildingModel({
     required this.id,
     required this.buildingInformation,
     required this.buildingLocation,
@@ -17,10 +17,10 @@ class Building {
     required this.createdAt,
   });
 
-  factory Building.fromFirestore(DocumentSnapshot doc) {
+  factory BuildingModel.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
 
-    return Building(
+    return BuildingModel(
       id: doc.id,
       buildingInformation: BuildingInformation.fromMap(
           data["building_information"] ?? {}),
